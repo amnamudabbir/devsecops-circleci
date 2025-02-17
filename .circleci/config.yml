@@ -27,7 +27,7 @@ jobs:
       - checkout
       - run:
           name: Build Docker image
-          command: docker build -t yourdockerhubusername/devsecops-app .
+          command: docker build -t amnamudabbir/devsecops-circleci .
 
   push_docker:
     docker:
@@ -40,7 +40,7 @@ jobs:
           command: echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
       - run:
           name: Push Docker image
-          command: docker push yourdockerhubusername/devsecops-app
+          command: docker push amnamudabbir/devsecops-circleci
 
 workflows:
   version: 2
